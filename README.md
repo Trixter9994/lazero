@@ -1,3 +1,4 @@
+<span style="color:red;background:black">
 ![lazero_background](/lazero_background.png)
 # A brief intro to lazero
 
@@ -75,4 +76,4 @@ To make itself ubiquitous, the method must be solid, generic, and continual. It 
 # Lazero is a free AI
 
 Hereby, I provided you a free AI, free of charge, able to operate on its own, seeking for its own purpose, fixing or creating problems as it prevails. Don't worry about reading manuals or shortcuts, cause it will find yours.
-
+</span>
