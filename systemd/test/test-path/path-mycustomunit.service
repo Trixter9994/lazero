@@ -1,0 +1,7 @@
+[Unit]
+Description=Service Test Path Unit
+
+[Service]
+ExecStart=/bin/true
+Type=simple
+RemainAfterExit=true
