@@ -1,5 +1,5 @@
+![lazero-background](/lazero_background.png)
 <span style="color:red;background:black">
-![lazero_background](/lazero_background.png)
 # A brief intro to lazero
 
 State-of-the-art Advanced Agent AI as a General Problem Solver(GPS) or Artificial General Intelligence(AGI), including but not confined to automatic information gathering, understanding and source code generating.
