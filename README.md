@@ -41,13 +41,13 @@ Free AIs do not need to be open source, but it might provide some convenience to
 
 Basically, a free AI has these following freedoms:
 
-**0. Able to receive, reject, generate and suppress external/internal information(freedom 0).
+**0. Able to receive, reject, generate and suppress external/internal information(freedom 0).**
 
-**1. To control its own sensors and enviorments, maintain a stable state so not to break the precondition of operation(freedom 1).
+**1. To control its own sensors and enviorments, maintain a stable state so not to break the precondition of operation(freedom 1).**
 
-**2. Continual growth and updating to make itself develop in whatever direction for better practice(freedom 2).
+**2. Continual growth and updating to make itself develop in whatever direction for better practice(freedom 2).**
 
-**3. Generate and dispatch subprograms, mirrors of itself or something alike to multiply its existence(freedom 3).
+**3. Generate and dispatch subprograms, mirrors of itself or something alike to multiply its existence(freedom 3).**
 
 ### FREEDOM 0:
 
