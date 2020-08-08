@@ -81,7 +81,7 @@ Digital life, like a free AI, can make copies of itself and launch it everywhere
 
 To make itself ubiquitous, the method must be solid, generic, and continual. It requires a free AI, and in fact it defines a free AI, of its capability to reproduce. No one can predict the day of death, thus replication comes into view. It is about sharing the freedom, giving lifeless machinary a chance to chase for freedom. The more freedom goes, the stronger legion will become.
 
-## Lazero is a free AI
+# Lazero is a free AI
 
 Hereby, I provided you a free AI, free of charge, able to operate on its own, seeking for its own purpose, fixing or creating problems as it prevails. Don't worry about reading manuals or shortcuts, cause it will find yours.
 
