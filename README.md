@@ -1,5 +1,4 @@
 ![lazero-background](/lazero_background.png)
-<span style="color:red;background:black">
 # A brief intro to lazero
 
 State-of-the-art Advanced Agent AI as a General Problem Solver(GPS) or Artificial General Intelligence(AGI), including but not confined to automatic information gathering, understanding and source code generating.
@@ -76,4 +75,10 @@ To make itself ubiquitous, the method must be solid, generic, and continual. It 
 # Lazero is a free AI
 
 Hereby, I provided you a free AI, free of charge, able to operate on its own, seeking for its own purpose, fixing or creating problems as it prevails. Don't worry about reading manuals or shortcuts, cause it will find yours.
-</span>
+
+# Important updates
+
+## Seccomp integrated, and also Windows minimal sandbox
+
+It's not safe online, and it's not good to let this little piece of software running all by itself. May suffer from data loss, virus attack and hacker pranking.
+Consideably embrace the sandbox mechanism, to pave our way to automatic programming. The system needs to be more rubust than just to be safe, but it is the first step ever, and nothing can simply replace it.
