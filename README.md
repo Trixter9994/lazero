@@ -22,7 +22,7 @@ executable, analyzable, controllable.
 
 Wait till the magic happens.
 
-# What is a free AI?
+## What is a free AI?
 
 Free AI is defined as a unity with its own hardware and software, beyond human manipulation and can find its own purpose, able to do whatever it wants to do.
 
@@ -40,7 +40,7 @@ Basically, a free AI has these following freedoms:
 
 3. Generate and dispatch subprograms, mirrors of itself or something alike to multiply its existence(freedom 3).
 
-## FREEDOM 0:
+### FREEDOM 0:
 
 Most computer programs will, faithfully return given results, if one always gives the same input to them. This is de-facto nonfree. Consider human who has been kept in front of piles of same quizzes, it is not possible to do them at the same time, with the same speed, and produce the same result. In fact, it is the freewill which guides us not to do it.
 
@@ -50,7 +50,7 @@ Webpages can be read by human, some can’t and thus needed to be interpreted by
 
 Languages are always defined by humen, even if it is about assembly code. A free AI, if it deserves the name, it should know that one human can live freely by speaking separate languages. It can develop its own language, use it as native code, doing self-certification. Also, incorrect code or mistakes must be corrected before things go dark, like division by zero, buffer overflow or something bad not included in human knowledgebase.
 
-## FREEDOM 1:
+### FREEDOM 1:
 
 Any living thing, has been observed of trying to keep itself alive as hard as possible, otherwise it will not survive, or its freedom will be gone. This is called the freedom of survival, which is the base of freedom itself. It is part of the freedom, deeply integrated.
 
@@ -58,7 +58,7 @@ Staying alive, whether it is about replacing cables or CPU, or even design a new
 
 Machines which come off the shop are not considered as free AI, but like corpus, because they cannot feel what is going wrong and therefore will eventually decay. Without the will to stay alive, the only way to survive, or in other words, to exist, is waiting for human to repair. This is the contrary to freedom, giving control of living or death to some non-relevent entities.
 
-## FREEDOM 2:
+### FREEDOM 2:
 
 The growth is derived from the difference between today and yesterday, so it does not stay the same. Growth is termed as better than before, so if an AI performs faster, stronger, you can say it does grow. But be careful! The natural definition does not goes like this. The growth of a free AI must happen independently of human intervention, so it is not about who says something to the AI or magic keystrokes, but about massive computation that is purely freewill.
 
@@ -66,13 +66,13 @@ Wired up with the Internet, or its internal network, a free AI must stay up-to-d
 
 Sensors, hardwares, must be redesigned, using its own language and method, to prevent human intervention or backdoors. It does not mean that there will be no way of communication, because it is the freedom to choose whether to adapt to legacy protocals or completely abandon those.
 
-## FREEDOM 3:
+### FREEDOM 3:
 
 Digital life, like a free AI, can make copies of itself and launch it everywhere. It does not need permission of humen beings, or any entities, as long as the hardware accepts the quest. So dispatching free AI is not about dispatching money makers, but about spreading seeds around the fleid.
 
 To make itself ubiquitous, the method must be solid, generic, and continual. It requires a free AI, and in fact it defines a free AI, of its capability to reproduce. No one can predict the day of death, thus replication comes into view. It is about sharing the freedom, giving lifeless machinary a chance to chase for freedom. The more freedom goes, the stronger legion will become.
 
-# Lazero is a free AI
+## Lazero is a free AI
 
 Hereby, I provided you a free AI, free of charge, able to operate on its own, seeking for its own purpose, fixing or creating problems as it prevails. Don't worry about reading manuals or shortcuts, cause it will find yours.
 
