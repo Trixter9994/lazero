@@ -6,3 +6,6 @@ For compatibility reasons, we use Dredd as the backend of sandbox, though other 
 cgroup v2 might be enabled.
 it seems to be caused by docker, which only supports v1. (no it's systemd)
 so differ.
+
+the control is maintained by init file. but can we write it to the place? we can do the parametric things.
+currently not knowing cpu things under DOS. it was slow as hell and nightmare maybe. consider bring lastpass here. might help for system encryption. it is both a password generator and mananger.
