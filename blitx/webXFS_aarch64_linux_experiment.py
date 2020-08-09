@@ -30,7 +30,7 @@ if __name__ == "__main__":
     pp = MyPP()
     # command = ['screen', '-x']
 #    command = ['bash']
-    command=['./launcher_x86_64_linux.sh']
+    command=['./launcher_aarch64_linux.sh']
     # does this work in WINDOWS?
     def theFunc(a):
         a.run()

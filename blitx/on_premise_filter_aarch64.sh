@@ -60,7 +60,7 @@ if [ $candidates -gt 0 ]; then
 		# this is when things going philosophical.
 		# the null command.
 	fi
-	sudo bash -c "echo 5000 > $tardir/blitx/cpu.cfs_quota_us"
+	sudo bash -c "echo 20000 > $tardir/blitx/cpu.cfs_quota_us"
 	sudo bash -c "echo 50000 > $tardir/blitx/cpu.cfs_period_us"
 	# do the stuff then.
 	# return the directory, for future use.
@@ -75,7 +75,7 @@ else
 		sudo mount -t cgroup -o cpu none $default_cpu
 		# if this fails, might be used by cgroup-v2, and we need to redefine the function.
 		# really? not know.
-		sudo bash -c "echo 5000 > $default_cpu/blitx/cpu.cfs_quota_us"
+		sudo bash -c "echo 20000 > $default_cpu/blitx/cpu.cfs_quota_us"
 		sudo bash -c "echo 50000 > $default_cpu/blitx/cpu.cfs_period_us"
 		# do the stuff then.
 		# return the directory, for future use.
