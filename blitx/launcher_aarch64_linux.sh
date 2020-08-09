@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/data/data/com.termux/files/usr/bin/bash
 file_target=$( ./on_premise_filter_aarch64.sh )
 cd bin/linux/aarch64
 #./libjudger.so --exe_path=$(which bash) --seccomp_rule_name="randomfuck" --max_cpu_time=500 --max_real_time=5000 --max_memory=14213120 --max_stack=500000 --max_process_number=2 --args="--rcfile" --args="../../../bashrc"

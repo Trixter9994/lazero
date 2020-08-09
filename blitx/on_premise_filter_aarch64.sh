@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/data/data/com.termux/files/usr/bin/bash
 get_checked(){
 	# parameters are not named.
 	echo $1
@@ -24,7 +24,7 @@ get_kernel(){
 		return 1
 	fi
 }
-res0=$(echo $(./check_mount.sh | grep -i cpu | awk '{print $2}'))
+res0=$(echo $(./check_mount_aarch64.sh | grep -i cpu | awk '{print $2}'))
 IFS=' '
 read -ra ADDR <<<"$res0"
 ARRAY=()
