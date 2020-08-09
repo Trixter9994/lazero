@@ -14,7 +14,6 @@ get_kernel(){
 #		echo $i
 	done
 	echo $v
-	v=0
 	if [ $v -ne 0 ] ; then
 		return 0
 	else
