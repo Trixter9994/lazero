@@ -5,6 +5,7 @@ cd bin/linux/aarch64
 # does that work without intervention?
 while true
 do
+	sudo bash -c "chmod 777 $file_target"
 	sudo bash -c "echo $$ > $file_target"
 	if [ $? -eq 0 ]; then
 		break
