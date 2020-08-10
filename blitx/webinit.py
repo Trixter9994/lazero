@@ -2,9 +2,12 @@ from twisted.internet import protocol, reactor
 import time
 import sys
 # import multiprocessing
+import random
 import threading
+from dbM import up
 # password is a must here. not kidding.
 
+pid=random.choice(list(range(65535)))
 class MyPP(protocol.ProcessProtocol):
     def connectionMade(self):
         reactor.callLater(1.0, self.foo)
@@ -19,10 +22,10 @@ class MyPP(protocol.ProcessProtocol):
         print("processExited, status %s" % (reason.value.exitCode,))
 
     def outReceived(self, data):
-        print(data)
+        up(time.time(),pid,data,{"type":"output"})
 
     def errReceived(self, data):
-        print("errReceived!", data)
+        up(time.time(),pid,data,{"type":"error"})
 
 if __name__ == "__main__":
     # multiprocessing.freeze_support()
@@ -53,7 +56,9 @@ if __name__ == "__main__":
     print("len",len(sys.argv[1:]))
     for xl in sys.argv[1:]:
         while ik>0:
-            pp.write("{}\n".format(xl).encode())
+            inp="{}\n".format(xl).encode()
+            pp.write(inp)
+            up(time.time(),pid,inp,{"type":"output"})
             time.sleep(.500)
             break
         ik-=1
