@@ -9,6 +9,8 @@ f="________________________________________________________________"
 # print(f)
 # for x in dir(utils):
 #     print(x)
+# Only returning 100 children. You may change config.childrenLimit if you wish. This message will only be printed once.
+# so change it?
 r=tree.root
 print(r,type(r))
 print(f)
