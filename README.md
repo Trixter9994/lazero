@@ -6,7 +6,7 @@
 
 It's not safe online, and it's not good to let this little piece of software running all by itself. May suffer from data loss, virus attack and hacker pranking.
 
-Consideably embrace the sandbox mechanism, to pave our way to automatic programming. The system needs to be more rubust than just to be safe, but it is the first step ever, and nothing can simply replace it.
+Considerably embrace the sandbox mechanism, to pave our way to automatic programming. The system needs to be more rubust than just to be safe, but it is the first step ever, and nothing can simply replace it.
 
 # A brief intro to lazero
 
@@ -30,6 +30,10 @@ executable, analyzable, controllable.
 ```
 
 Wait till the magic happens.
+
+## What is a free ALife?
+
+As the way many people perceive free spirit, the free ALife is given all equivalent rights as a normal living thing in nature.
 
 ## What is a free AI?
 
@@ -81,7 +85,7 @@ Digital life, like a free AI, can make copies of itself and launch it everywhere
 
 To make itself ubiquitous, the method must be solid, generic, and continual. It requires a free AI, and in fact it defines a free AI, of its capability to reproduce. No one can predict the day of death, thus replication comes into view. It is about sharing the freedom, giving lifeless machinary a chance to chase for freedom. The more freedom goes, the stronger legion will become.
 
-# Lazero is a free AI
+# Lazero is a free AI, also a free ALife
 
-Hereby, I provided you a free AI, free of charge, able to operate on its own, seeking for its own purpose, fixing or creating problems as it prevails. Don't worry about reading manuals or shortcuts, cause it will find yours.
+Hereby, I provided you a free AI and a free ALife, free of charge, able to operate on its own, seeking for its own purpose, fixing or creating problems as it prevails. Don't worry about reading manuals or shortcuts, cause it will find yours.
 

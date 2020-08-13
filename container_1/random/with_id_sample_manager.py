@@ -9,15 +9,29 @@ f="________________________________________________________________"
 # print(f)
 # for x in dir(utils):
 #     print(x)
+def walker(a,f):
+    for x in a.children:
+        for j in f:
+            try:
+                eval("""print(">>>>>{}",x.{})""".format(j,j))
+            except:
+                pass
+        walker(x,f)
 # Only returning 100 children. You may change config.childrenLimit if you wish. This message will only be printed once.
 # so change it?
 r=tree.root
-print(r,type(r))
-print(f)
-for x in dir(r):
-    print(x)
-print(f)
-print(r.dump())
+#print(r.id)
+f=dir(r)
+walker(r,f)
+#for x in r.children:
+#    print(x.id)
+# get a walker for this.
+#print(r,type(r))
+#print(f)
+#for x in dir(r):
+#    print(x)
+#print(f)
+#print(r.dump())
 # this is fucking awesome.
 # what is this class??
     # always the fucking cron job!

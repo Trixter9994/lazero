@@ -9,3 +9,6 @@ so differ.
 
 the control is maintained by init file. but can we write it to the place? we can do the parametric things.
 currently not knowing cpu things under DOS. it was slow as hell and nightmare maybe. consider bring lastpass here. might help for system encryption. it is both a password generator and mananger.
+
+So for GUI stuff, sandboxie and firejail will help, while locking to the target is also critical to safety.
+It's about the relation between pid and GUI handles.
