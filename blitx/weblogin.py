@@ -3,6 +3,7 @@ import time
 # import multiprocessing
 import threading
 from dbM import up
+import re
 from pairserver import onceMore
 # password is a must here. not kidding.
 pid=0
@@ -21,6 +22,10 @@ class MyPP(protocol.ProcessProtocol):
 
     def outReceived(self, data):
         print(data)
+        if pid==0:
+            if data[:4]==b"\x00\xd0\x9d\x09":
+                pid=int(re.findall(r'[0-9]+',data[4:].decode())[0])
+                print("pid:",pid)
         # it is here.
         up(time.time(),pid,data,{"type":"output"})
 
