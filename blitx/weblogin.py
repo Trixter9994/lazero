@@ -60,7 +60,7 @@ if __name__ == "__main__":
     # what the heck?
     # with TIMESTAMP.
     # print("{OF}")
-    ik = 50
+    ik = 10
     #pp.write(b"parrot\n")
     time.sleep(1)
     # not working here.
