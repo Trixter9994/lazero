@@ -6,8 +6,10 @@ from dbM import up
 import re
 from pairserver import onceMore
 # password is a must here. not kidding.
+
 pid=0
 class MyPP(protocol.ProcessProtocol):
+    global pid
     def connectionMade(self):
         reactor.callLater(1.0, self.foo)
 
@@ -21,15 +23,18 @@ class MyPP(protocol.ProcessProtocol):
         print("processExited, status %s" % (reason.value.exitCode,))
 
     def outReceived(self, data):
+        global pid
         print(data)
         if pid==0:
+            #print("received:",data[:4])
             if data[:4]==b"\x00\xd0\x9d\x09":
                 pid=int(re.findall(r'[0-9]+',data[4:].decode())[0])
-                print("pid:",pid)
+                #print("pid:",pid)
         # it is here.
         up(time.time(),pid,data,{"type":"output"})
 
     def errReceived(self, data):
+        global pid
         print(data)
         up(time.time(),pid,data,{"type":"error"})
 
