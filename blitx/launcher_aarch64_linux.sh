@@ -10,7 +10,9 @@ do
 	if [ $? -eq 0 ]; then
 		break
 	fi
-	sleep 1
+	cd ../../../
+	sudo bash -c "./launcher_aarch64_linux.sh"
+	exit 0
 done
 
 sudo ./libjudger.so --exe_path=$(which bash) --seccomp_rule_name="random"  --max_cpu_time=500 --max_real_time=10000 --max_memory=14213120 --max_stack=500000 --max_process_number=2  --input_path=/proc/self/fd/0 --output_path=/proc/self/fd/1 --error_path=/proc/self/fd/2 --uid=0 --gid=0

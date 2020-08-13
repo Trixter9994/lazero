@@ -1,4 +1,4 @@
-It is the derived project Biltx.
+It is the derived project Blitx.
 There used to be browser plugins, android clients.
 
 For compatibility reasons, we use Dredd as the backend of sandbox, though other things like proot might help but have not yet been fully understood.

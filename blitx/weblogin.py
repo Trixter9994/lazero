@@ -1,10 +1,10 @@
 from twisted.internet import protocol, reactor
 import time
-import sys
 # import multiprocessing
 import random
 import threading
 from dbM import up
+from pairserver import onceMore
 # password is a must here. not kidding.
 
 pid=random.choice(list(range(65535)))
@@ -22,9 +22,11 @@ class MyPP(protocol.ProcessProtocol):
         print("processExited, status %s" % (reason.value.exitCode,))
 
     def outReceived(self, data):
+        print(data)
         up(time.time(),pid,data,{"type":"output"})
 
     def errReceived(self, data):
+        print(data)
         up(time.time(),pid,data,{"type":"error"})
 
 if __name__ == "__main__":
@@ -53,14 +55,12 @@ if __name__ == "__main__":
     #pp.write(b"parrot\n")
     time.sleep(1)
     # not working here.
-    print("len",len(sys.argv[1:]))
-    for xl in sys.argv[1:]:
-        while ik>0:
-            inp="{}\n".format(xl).encode()
-            pp.write(inp)
-            up(time.time(),pid,inp,{"type":"input"})
-            time.sleep(.500)
-            break
+    while ik>0:
+        inp=onceMore()
+        print(inp)
+        pp.write(inp)
+        up(time.time(),pid,inp,{"type":"input"})
+        time.sleep(.500)
         ik-=1
     pp.write(b"exit\n")
     time.sleep(1)
