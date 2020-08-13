@@ -1,13 +1,11 @@
 from twisted.internet import protocol, reactor
 import time
 # import multiprocessing
-import random
 import threading
 from dbM import up
 from pairserver import onceMore
 # password is a must here. not kidding.
-
-pid=random.choice(list(range(65535)))
+pid=0
 class MyPP(protocol.ProcessProtocol):
     def connectionMade(self):
         reactor.callLater(1.0, self.foo)
@@ -23,6 +21,7 @@ class MyPP(protocol.ProcessProtocol):
 
     def outReceived(self, data):
         print(data)
+        # it is here.
         up(time.time(),pid,data,{"type":"output"})
 
     def errReceived(self, data):
