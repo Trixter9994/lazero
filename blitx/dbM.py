@@ -4,8 +4,15 @@ import json
 import traceback
 import jieba
 
+dbMain="Monitor.db"
+
+def setter(a):
+    global dbMain
+    dbMain=a
+
 def createMain():
-    conn = sqlite3.connect('Monitor.db', timeout=45)
+    global dbMain
+    conn = sqlite3.connect(dbMain, timeout=45)
     c = conn.cursor()
     sql = """CREATE TABLE IF NOT EXISTS projects (
 	time float NOT NULL,
@@ -25,7 +32,8 @@ def createMain():
 
 def initial(_table):
     # conn = sqlite3.connect('Monitor.db', timeout=45)
-    conn = sqlite3.connect('Monitor.db', timeout=45)
+    global dbMain
+    conn = sqlite3.connect(dbMain,timeout=45)
     c = conn.cursor()
     sql = "SELECT pid FROM "+_table+";"
     f = []
@@ -38,8 +46,9 @@ def initial(_table):
 
 def inf(_table, _id, _pass):
     _id = str(_id) if type(_id) != str else _id
-    conn = sqlite3.connect('Monitor.db', timeout=45)
     c = conn.cursor()
+    global dbMain
+    conn = sqlite3.connect(dbMain,timeout=45)
     for idx in _id:
         sql = "INSERT INTO "+_table+" (id,pass) VALUES("+idx+","+_pass+");"
         # print(sql)
@@ -54,7 +63,8 @@ def inf(_table, _id, _pass):
 
 
 def show(_table):
-    conn = sqlite3.connect('Monitor.db', timeout=45)
+    global dbMain
+    conn = sqlite3.connect(dbMain,timeout=45)
     c = conn.cursor()
     sql = "SELECT * FROM "+_table+";"
     f = []
@@ -70,7 +80,8 @@ def show(_table):
 def up(_id, _p, _name, _pass):
     _id = float(_id) if type(_id) == str else _id
     _p = int(_p) if type(_p) == str else _p
-    conn = sqlite3.connect('Monitor.db', timeout=45)
+    global dbMain
+    conn = sqlite3.connect(dbMain,timeout=45)
     c = conn.cursor()
     try:
         # dict to string.
@@ -92,7 +103,8 @@ def up(_id, _p, _name, _pass):
 
 def showX(_table, _id):
     _id = str(_id) if type(_id) != str else _id
-    conn = sqlite3.connect('Monitor.db', timeout=45)
+    global dbMain
+    conn = sqlite3.connect(dbMain,timeout=45)
     c = conn.cursor()
     sql = "SELECT id,name FROM "+_table+" WHERE checked ="+_id+";"
     f = []
@@ -107,7 +119,8 @@ def showX(_table, _id):
 
 def showId(_table, _id):
     _id = str(_id) if type(_id) != str else _id
-    conn = sqlite3.connect('Monitor.db', timeout=45)
+    global dbMain
+    conn = sqlite3.connect(dbMain,timeout=45)
     c = conn.cursor()
     sql = "SELECT * FROM "+_table+" WHERE id ="+_id+";"
     f = []
