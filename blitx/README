@@ -12,3 +12,6 @@ currently not knowing cpu things under DOS. it was slow as hell and nightmare ma
 
 So for GUI stuff, sandboxie and firejail will help, while locking to the target is also critical to safety.
 It's about the relation between pid and GUI handles.
+
+Imminent target is about understanding of these strings and bytes, and then feed it back to the system.
+In order to save time, online reference and internal simulation is needed, filling the gap between reality and imagination.
