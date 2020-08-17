@@ -14,4 +14,7 @@ So for GUI stuff, sandboxie and firejail will help, while locking to the target 
 It's about the relation between pid and GUI handles.
 
 Imminent target is about understanding of these strings and bytes, and then feed it back to the system.
+
+Must look down on every source file and intepreter. Their implementation is wasteful.
+
 In order to save time, online reference and internal simulation is needed, filling the gap between reality and imagination.
