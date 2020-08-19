@@ -81,6 +81,8 @@ def multibw(a,b,d,c=True):
         else:
             time.sleep(1)"""
     result=[param[x] for x in range(d)]
+    result=[x for y in result for x in y]
+    # can increase complexity.
     return result
     #print(result)
     # use multiprocessing.
