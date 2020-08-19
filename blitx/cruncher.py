@@ -64,7 +64,7 @@ def multibw(a,b,d,c=True):
     param = mgr.dict()
     for x in range(d):
         param[x]=None
-    jobs = [multiprocessing.Process(target=bw, args=(a[k[x][0]:k[x][1]],b,x,param)) for x in range(d)]
+    jobs = [multiprocessing.Process(target=bw, args=(a[k[x][0]:k[x][1]],b,x,param,c)) for x in range(d)]
     for j in jobs:
         j.start()
     for j in jobs:

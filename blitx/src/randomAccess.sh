@@ -1,2 +1,2 @@
 #!/bin/bash
-python3 -i randomAccess.py
+python3 -i choice.py
