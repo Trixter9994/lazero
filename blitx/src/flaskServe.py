@@ -3,15 +3,23 @@ import threading
 import pytesseract
 import time
 import copy
+import io
+from PIL import Image
 
 def scanner(mainfile,filerefresh):
     while True:
         if (filerefresh[0]):
             try:
                 data=copy.copy(mainfile[0])
-                print(type(data),data)
+                #print(type(data),len(data))
+                image = Image.open(io.BytesIO(data))
+                text = pytesseract.image_to_string(image,lang='eng') #使用简体中文解析图片
+                # so goddamn slow.
+                # but it is because without direct access.
+                print(text)
+                filerefresh[0]=False
             except:
-                print("MISSED")
+                #print("MISSED")
         else:
             time.sleep(1)
 mainfile=[None]
