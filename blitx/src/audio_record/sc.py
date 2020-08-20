@@ -1,11 +1,13 @@
 import soundcard as sc
 import numpy
-
+# is this shit realy installed?
+# don't know if working for android or windows. check first.
 # you can use numba. just maybe.
 # but useless on ARM.
 # get a list of all speakers:
 # this is shit.
 speakers = sc.all_speakers()
+print(speakers)
 # get the current default speaker on your system:
 default_speaker = sc.default_speaker()
 # get a list of all microphones:
