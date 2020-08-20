@@ -1,0 +1,33 @@
+import soundcard as sc
+import numpy
+
+# you can use numba. just maybe.
+# but useless on ARM.
+# get a list of all speakers:
+speakers = sc.all_speakers()
+# get the current default speaker on your system:
+default_speaker = sc.default_speaker()
+# get a list of all microphones:
+mics = sc.all_microphones()
+# get the current default microphone on your system:
+default_mic = sc.default_microphone()
+
+#data = default_mic.record(samplerate=48000, numframes=48000*5)
+# reshape the thing?
+data=numpy.linspace(-1000,10000,48000*5)
+data=numpy.sin(data)
+data=data.tolist()
+data=list(zip(data,data))
+data=numpy.array(data)
+print("finished record")
+# what the fuck?
+# so it makes the sound.
+# but how to record that back? get the thing?
+default_speaker.play(data/numpy.max(data), samplerate=48000)
+#print(data/numpy.max(data))
+#print(data.shape)
+#print(data)
+# nothing there. but still playing?
+#check this!
+# search for a sound card by substring:
+# check all these shits.
