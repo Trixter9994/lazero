@@ -1,5 +1,6 @@
 import soundcard as sc
 import numpy
+# not working for android.
 # is this shit realy installed?
 # don't know if working for android or windows. check first.
 # you can use numba. just maybe.
@@ -24,6 +25,7 @@ data=numpy.sin(data)
 data=data.tolist()
 data=list(zip(data,data))
 data=numpy.array(data)"""
+print(data)
 print("finished record")
 # what the fuck?
 # so it makes the sound.
