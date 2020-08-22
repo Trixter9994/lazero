@@ -27,6 +27,11 @@ data=list(zip(data,data))
 data=numpy.array(data)"""
 print(data)
 print("finished record")
+#numpy.random.shuffle(data)
+# this will generate white noise.
+# junk^2 = worse junk
+# junk*0 = clear
+# no output.
 # what the fuck?
 # so it makes the sound.
 # but how to record that back? get the thing?
