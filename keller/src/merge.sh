@@ -16,7 +16,7 @@ do
 	echo $i
 	arbitrary "$i"
 #	echo $?
-	echo $retval
+	echo $retval | curl --header 'Content-Type: text/html; charset=UTF-8' --request POST --data-binary @- --no-buffer http://localhost:7777/keller
 # and that's your fucking dream.
 done
 # store it into variables.
