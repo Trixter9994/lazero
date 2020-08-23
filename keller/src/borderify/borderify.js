@@ -20,6 +20,50 @@ async function dfunc() {
 
 console.log("LAZERO PLUGIN\n    -\n   |               ___  __  __\n  / \\  |    /|  /  ___ |   |  |\n \\  _\\ |__ / | /__ ___ |   |__|\n\nTo make everything\nexecutable, analyzable, controllable.");
 dfunc();
+// it is async.
+async function func() {
+    while (true) {
+        await sleep(1000);
+        // no fucking border.
+        try { fetch("https://localhost:5000/nothing",{credentials:'include'}).then(function(response){console.log(response)}).catch(function(ex){console.log("Exception: ",ex)}) }
+        catch (e) { console.log(e); }
+    }
+}
+func();
+async function sfunc(){
+while (true){
+await sleep(2000);
+	try{
+let socket = new WebSocket("wss://localhost:5000/random");
+socket.onopen = function(e) {
+  console.log("[open] Connection established");
+  console.log("Sending to server");
+  socket.send("My name is John");
+};
+
+socket.onmessage = function(event) {
+  console.log(`[message] Data received from server: ${event.data}`);
+};
+
+socket.onclose = function(event) {
+  if (event.wasClean) {
+    console.log(`[close] Connection closed cleanly, code=${event.code} reason=${event.reason}`);
+  } else {
+    // e.g. server process killed or network down
+    // event.code is usually 1006 in this case
+	  // get uuid from elsewhere? check it logically.
+    console.log('[close] Connection died');
+  }
+};
+
+socket.onerror = function(error) {
+  console.log(`[error] ${error.message}`);
+};
+		// wss://
+	}catch(e){console.log(e);}
+}
+}
+sfunc();
 // how to dump the full shit?
 // so there are three states.
 // switch (document.readyState) {

@@ -7,3 +7,13 @@ they force me to become a hacker. they deserve this: death.
 background -> request, handle cookies, browser history, favourites.
 
 tabs -> content processing, subrequest.
+
+firefox -> about:config -> websocket allow from https
+
+or add your root certificate. or just allow exceptions:
+
+certificate manager -> server -> add exception
+
+chrome -> chrome://flags -> allow invalid certs from localhost
+
+add ca to system so normal code will be running fine.
