@@ -16,4 +16,6 @@ certificate manager -> server -> add exception
 
 chrome -> chrome://flags -> allow invalid certs from localhost
 
+allow insecure websockets.
+
 add ca to system so normal code will be running fine.

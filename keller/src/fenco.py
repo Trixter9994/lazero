@@ -56,6 +56,7 @@ def hello(path):
  
  
 if __name__ == "__main__":
-    server = pywsgi.WSGIServer(('localhost', 5000), app, handler_class=WebSocketHandler,keyfile="certs/ca/ca.key",certfile="certs/ca/ca.crt")
+    server = pywsgi.WSGIServer(('localhost', 5000), app, handler_class=WebSocketHandler,keyfile="certs/server.key",certfile="certs/server.crt")
+    #server = pywsgi.WSGIServer(('localhost', 5000), app, handler_class=WebSocketHandler,keyfile="certs/ca/ca.key",certfile="certs/ca/ca.crt")
     print('server start')
     server.serve_forever()
