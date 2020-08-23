@@ -1,0 +1,83 @@
+{
+  "manifest_version": 2,
+  "name": "Lazero Extension for Chrome",
+  "version": "1.0.0",
+  "version_name": "Apolo",
+  "short_name": "Lazero",
+  "author": "Lazero Ltd.",
+  "description": "Lazero Helper Extension",
+  "background": {
+    "persistent": true,
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "chrome_url_overrides": {
+    "newtab": "my-new-tab.html"
+  },
+  "incognito": "split",
+  "icons": {
+    "128": "icon128.png",
+    "32": "icon32.png",
+    "48": "icon48.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "icon16.png",
+      "32": "icon32.png"
+    },
+    "default_popup": "popup.html",
+    "default_title": "Check to see if jQuery is on this page"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "externally_connectable": {
+    "ids": [
+      "*"
+    ]
+  },
+  "permissions": [
+    "<all_urls>",
+    "activeTab",
+    "alarms",
+    "background",
+    "bookmarks",
+    "browsingData",
+    "clipboardRead",
+    "clipboardWrite",
+    "debugger",
+    "contextMenus",
+    "contentSettings",
+    "cookies",
+    "dns",
+    "downloads",
+    "downloads.open",
+    "geolocation",
+    "history",
+    "identity",
+    "idle",
+    "management",
+    "nativeMessaging",
+    "notifications",
+    "pageCapture",
+    "privacy",
+    "proxy",
+    "sessions",
+    "storage",
+    "tabs",
+    "topSites",
+    "unlimitedStorage",
+    "webNavigation",
+    "webRequest",
+    "webRequestBlocking"
+  ]
+}
