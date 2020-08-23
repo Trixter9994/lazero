@@ -91,7 +91,6 @@ def parse_page(url, page):
             data['abstract'] = abstract
 
             rel_url = content.xpath('//*[@id="page"]/a[{}]/@href'.format(flag))
-            # what the heck? renewed the mechanism?
             if rel_url:
                 url = urljoin(url, rel_url[0])
             else:
@@ -104,6 +103,7 @@ def main():
     keyword = input("输入关键字:")
     page = input("输入查找页数:")
     url = get_url(keyword)
+
     results = parse_page(url, page)
     # 写入文件
     # file = open("data.json", 'w+', encoding='utf-8')
