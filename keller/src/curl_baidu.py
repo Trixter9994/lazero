@@ -9,7 +9,7 @@ def get_url(keyword):
     params = {
         'wd': str(keyword)
     }
-    url = "https://www.baidu.com/s"
+    url = "http://www.baidu.com/s"
     url = format_url(url, params)
     # print(url)
 

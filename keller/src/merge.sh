@@ -2,6 +2,7 @@
 # use global variable.
 # heck.
 retval=""
+# it is not going to work. captcha here. maybe use internal browser as a solution. create a server inside? manual server, getting quest from the localhost and post it back.
 function arbitrary(){
 	CLO=$(echo "$1" | python3 curl_baidu.py)
 #	echo $CLO
