@@ -15,5 +15,6 @@ def get_url(keyword):
 
     return url
 
-for x in sys.stdin:
-    print(get_url(x))
+if __name__ == "__main__":
+    for x in sys.stdin:
+        print(get_url(x))
