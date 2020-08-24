@@ -44,6 +44,8 @@ def echo_socket(ws,path):
             print("%s receive msg==> " % now, str(json.dumps(message)))
             """ 如果客户端未发送消息给服务端，就调用接收消息方法，则会导致receive()接收消息为空，关闭此次连接 """
 #            ws.send(str(json.dumps(message)))  # 回传给clicent
+            time.sleep(1)
+# wait for a while. shall we?
             ws.send("https://www.baidu.com")
             # to disable the protocol, you might need another background script.
             # sending string. check data type.
