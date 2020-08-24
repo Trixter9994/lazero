@@ -16,7 +16,7 @@ async function asf() {
         // });
         // the same. so chrome is ahead of everything??
         console.log("this is background page.");
-        var tb=browser.tabs;
+        var tb=chrome.tabs;
         console.log(tb);
         // chrome.runtime.sendMessage({data:"something"},function(response){});
     }

@@ -8,6 +8,67 @@ Just draw a border round the document.body.
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
+
+
+/**
+ * inits a websocket by a given url, returned promise resolves with initialized websocket, rejects after failure/timeout.
+ *
+ * @param url the websocket url to init
+ * @param existingWebsocket if passed and this passed websocket is already open, this existingWebsocket is resolved, no additional websocket is opened
+ * @param timeoutMs the timeout in milliseconds for opening the websocket
+ * @param numberOfRetries the number of times initializing the socket should be retried, if not specified or 0, no retries are made
+ *        and a failure/timeout causes rejection of the returned promise
+ * @return {Promise}
+ */
+function initWebsocket(url, existingWebsocket, timeoutMs, numberOfRetries) {
+    timeoutMs = timeoutMs ? timeoutMs : 1500;
+    numberOfRetries = numberOfRetries ? numberOfRetries : 0;
+    var hasReturned = false;
+    var promise = new Promise((resolve, reject) => {
+        setTimeout(function () {
+            if(!hasReturned) {
+                console.info('opening websocket timed out: ' + url);
+                rejectInternal();
+            }
+        }, timeoutMs);
+        if (!existingWebsocket || existingWebsocket.readyState != existingWebsocket.OPEN) {
+            if (existingWebsocket) {
+                existingWebsocket.close();
+            }
+            var websocket = new WebSocket(url);
+            websocket.onopen = function () {
+                if(hasReturned) {
+                    websocket.close();
+                } else {
+                    console.info('websocket to opened! url: ' + url);
+                    resolve(websocket);
+                }
+            };
+            websocket.onclose = function () {
+                console.info('websocket closed! url: ' + url);
+                rejectInternal();
+            };
+            websocket.onerror = function () {
+                console.info('websocket error! url: ' + url);
+                rejectInternal();
+            };
+        } else {
+            resolve(existingWebsocket);
+        }
+
+        function rejectInternal() {
+            if(numberOfRetries <= 0) {
+                reject();
+            } else if(!hasReturned) {
+                hasReturned = true;
+                console.info('retrying connection to websocket! url: ' + url + ', remaining retries: ' + (numberOfRetries-1));
+                initWebsocket(url, null, timeoutMs, numberOfRetries-1).then(resolve, reject);
+            }
+        }
+    });
+    promise.then(function () {hasReturned = true;}, function () {hasReturned = true;});
+    return promise;
+};
 // do not do it twice.
 async function dfunc() {
     while (true) {
@@ -29,12 +90,30 @@ async function func() {
         catch (e) { console.log(e); }
     }
 }
+func();
+var socket_0;
 async function sfunc(){
 while (true){
-await sleep(2000);
 	try{
-let socket = new WebSocket("wss://localhost:5000/random");
+		//socket = new WebSocket("wss://localhost:5000/random");
+initWebsocket("wss://localhost:5000/random",null,3000,0).then(function (socket){
+socket_0=socket;
+	console.log("ws init succeed");
+	var timerID = 0;
+function keepAlive(webSocket) {
+ var timeout = 15000;
+ if (webSocket.readyState == webSocket.OPEN) {
+  webSocket.send('');
+ }
+ timerId = setTimeout(keepAlive(webSocket), timeout);
+}
+function cancelKeepAlive() {
+ if (timerId) {
+  cancelTimeout(timerId);
+ }
+}
 socket.onopen = function(e) {
+	keepAlive(socket_0);
   console.log("[open] Connection established");
   console.log("Sending to server");
   socket.send("My name is John");
@@ -42,6 +121,7 @@ socket.onopen = function(e) {
 
 socket.onmessage = function(event) {
   console.log(`[message] Data received from server: ${event.data}`);
+  socket.send("My name is John");
 };
 
 socket.onclose = function(event) {
@@ -53,18 +133,19 @@ socket.onclose = function(event) {
 	  // get uuid from elsewhere? check it logically.
     console.log('[close] Connection died');
   }
+	cancelKeepAlive();
 };
 
 socket.onerror = function(error) {
   console.log(`[error] ${error.message}`);
-};
-		// wss://
+
+}},function(){console.log("ws init failed");})
+await sleep(3000);
+	break;		// wss://
 	}catch(e){console.log(e);}
 }
 }
-// try multiple times till connection stablize.
 sfunc();
-//func();
 // how to dump the full shit?
 // so there are three states.
 // switch (document.readyState) {

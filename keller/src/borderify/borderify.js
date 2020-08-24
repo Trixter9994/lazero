@@ -8,27 +8,7 @@ Just draw a border round the document.body.
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
-order by
-Up vote
-3
-Down vote
-I've written the following code for opening a websocket failsafe with timeout and retries, see comments in code for more details.
 
-Usage - opening a websocket with 5000ms timeout and 10 retries (maximum):
-
-initWebsocket('ws:\\localhost:8090', null, 5000, 10).then(function(socket){
-    console.log('socket initialized!');
-    //do something with socket...
-
-    //if you want to use the socket later again and assure that it is still open:
-    initWebsocket('ws:\\localhost:8090', socket, 5000, 10).then(function(socket){
-        //if socket is still open, you are using the same "socket" object here
-        //if socket was closed, you are using a new opened "socket" object
-    }
-
-}, function(){
-    console.log('init of socket failed!');
-});
 
 /**
  * inits a websocket by a given url, returned promise resolves with initialized websocket, rejects after failure/timeout.
@@ -159,11 +139,9 @@ socket.onclose = function(event) {
 socket.onerror = function(error) {
   console.log(`[error] ${error.message}`);
 
-},function(){console.log("ws init failed");})
+}},function(){console.log("ws init failed");})
 await sleep(3000);
-	break;
-};
-		// wss://
+	break;		// wss://
 	}catch(e){console.log(e);}
 }
 }
