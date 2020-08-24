@@ -9,7 +9,6 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-var timerID = 0;
 /**
  * inits a websocket by a given url, returned promise resolves with initialized websocket, rejects after failure/timeout.
  *
@@ -99,6 +98,7 @@ while (true){
 		//socket = new WebSocket("wss://localhost:5000/random");
 initWebsocket("wss://localhost:5000/random",null,3000,0).then(function (socket){
 socket_0=socket;
+var timerId = 0;
 	console.log("ws init succeed");
 function keepAlive(webSocket) {
  var timeout = 15000;
@@ -128,6 +128,7 @@ socket.onmessage = function(event) {
 };
 
 socket.onclose = function(event) {
+	sfunc(3000);
   if (event.wasClean) {
     console.log(`[close] Connection closed cleanly, code=${event.code} reason=${event.reason}`);
   } else {
@@ -137,17 +138,16 @@ socket.onclose = function(event) {
     console.log('[close] Connection died');
   }
 	cancelKeepAlive();
-	sfunc(3000);
 	// keep calling.
 };
 
 socket.onerror = function(error) {
-  console.log(`[error] ${error.message}`);
 	sfunc(3000);
+  console.log(`[error] ${error.message}`);
 
 }},function(){
-	console.log("ws init failed");
 sfunc(3000);
+	console.log("ws init failed");
 })
 		// not usable? do it some time later?
 await sleep(3000);
