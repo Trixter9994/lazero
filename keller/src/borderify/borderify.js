@@ -117,8 +117,23 @@ while (true){
 	try{
 		//socket = new WebSocket("wss://localhost:5000/random");
 initWebsocket("wss://localhost:5000/random",null,3000,0).then(function (socket){
+socket_0=socket;
 	console.log("ws init succeed");
+	var timerID = 0;
+function keepAlive(webSocket) {
+ var timeout = 15000;
+ if (webSocket.readyState == webSocket.OPEN) {
+  webSocket.send('');
+ }
+ timerId = setTimeout(keepAlive(webSocket), timeout);
+}
+function cancelKeepAlive() {
+ if (timerId) {
+  cancelTimeout(timerId);
+ }
+}
 socket.onopen = function(e) {
+	keepAlive(socket_0);
   console.log("[open] Connection established");
   console.log("Sending to server");
   socket.send("My name is John");
@@ -138,11 +153,11 @@ socket.onclose = function(event) {
 	  // get uuid from elsewhere? check it logically.
     console.log('[close] Connection died');
   }
+	cancelKeepAlive();
 };
 
 socket.onerror = function(error) {
   console.log(`[error] ${error.message}`);
-socket_0=socket;
 
 },function(){console.log("ws init failed");})
 await sleep(3000);
