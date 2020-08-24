@@ -9,7 +9,7 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-
+var timerID = 0;
 /**
  * inits a websocket by a given url, returned promise resolves with initialized websocket, rejects after failure/timeout.
  *
@@ -92,14 +92,14 @@ async function func() {
 }
 func();
 var socket_0;
-async function sfunc(){
+async function sfunc(init){
+	await sleep(init);
 while (true){
 	try{
 		//socket = new WebSocket("wss://localhost:5000/random");
 initWebsocket("wss://localhost:5000/random",null,3000,0).then(function (socket){
 socket_0=socket;
 	console.log("ws init succeed");
-	var timerID = 0;
 function keepAlive(webSocket) {
  var timeout = 15000;
  if (webSocket.readyState == webSocket.OPEN) {
@@ -120,7 +120,10 @@ socket.onopen = function(e) {
 };
 
 socket.onmessage = function(event) {
-  console.log(`[message] Data received from server: ${event.data}`);
+	var edata = event.data;
+  console.log(`[message] Data received from server: `)
+	  console.log(edata);
+	// what data?
   socket.send("My name is John");
 };
 
@@ -134,18 +137,25 @@ socket.onclose = function(event) {
     console.log('[close] Connection died');
   }
 	cancelKeepAlive();
+	sfunc(3000);
+	// keep calling.
 };
 
 socket.onerror = function(error) {
   console.log(`[error] ${error.message}`);
+	sfunc(3000);
 
-}},function(){console.log("ws init failed");})
+}},function(){
+	console.log("ws init failed");
+sfunc(3000);
+})
+		// not usable? do it some time later?
 await sleep(3000);
 	break;		// wss://
 	}catch(e){console.log(e);}
 }
 }
-sfunc();
+sfunc(0);
 // how to dump the full shit?
 // so there are three states.
 // switch (document.readyState) {

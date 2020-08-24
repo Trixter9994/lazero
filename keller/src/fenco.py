@@ -26,7 +26,7 @@ app = Flask(__name__)
 sockets = Sockets(app)
 now = time.strftime('%Y-%m-%d-%H-%M-%S', time.localtime(time.time()))
  
- 
+# when using wifi, it is damn easy to get yourself blocked. static ip. so use browser to get fresh cookies, in case of nasty shits. 
 @sockets.route('/',defaults={'path': ''})  # 指定路由
 @sockets.route('/<path:path>')
 def echo_socket(ws,path):
@@ -43,7 +43,10 @@ def echo_socket(ws,path):
         if message is not None:
             print("%s receive msg==> " % now, str(json.dumps(message)))
             """ 如果客户端未发送消息给服务端，就调用接收消息方法，则会导致receive()接收消息为空，关闭此次连接 """
-            ws.send(str(json.dumps(message)))  # 回传给clicent
+#            ws.send(str(json.dumps(message)))  # 回传给clicent
+            ws.send("https://www.baidu.com")
+            # to disable the protocol, you might need another background script.
+            # sending string. check data type.
         else:
             print(now, "no receive")
  

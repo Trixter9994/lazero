@@ -23,7 +23,8 @@
   "background": {
     "persistent": true,
     "scripts": [
-      "background.js"
+      "background.js",
+      "disable_cors.js"
     ]
   },
   "permissions": [

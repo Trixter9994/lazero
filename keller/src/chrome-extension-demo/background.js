@@ -6,13 +6,15 @@ async function asf() {
         await sleep(1000);
         // console.log("happy newYear");
         // sending things.
-        chrome.runtime.sendMessage({
-            msg: "something_completed",
-            data: {
-                subject: "Loading",
-                content: "Just completed!"
-            }
-        });
+        // what the heck?
+        // chrome.runtime.sendMessage({
+        //     msg: "something_completed",
+        //     data: {
+        //         subject: "Loading",
+        //         content: "Just completed!"
+        //     }
+        // });
+        // the same. so chrome is ahead of everything??
         console.log("this is background page.");
         var tb=chrome.tabs;
         console.log(tb);
@@ -20,7 +22,11 @@ async function asf() {
     }
 }
 asf();
-// "devtools_page": "devtools/my-page.html",
-// does that work? to monitor the tab?
+// do it now.
+/*
+var getting = chrome.cookies.getAll()
+console.log(getting)*/
+// halt this.
 // structure matters. sequence matters.
+// does this matters? when switching instances. -> maybe.
 // can you do some extra things? copy things into the clipboard?
