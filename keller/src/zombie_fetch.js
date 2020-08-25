@@ -1,4 +1,5 @@
 const Browser = require('zombie');
+
 const browser = new Browser();
 // will have cookie anyway?
 // does have shits. but then it will get stuck.
