@@ -31,3 +31,7 @@ disable safety protocols. -> cors allowed -> plugin
 <RECOMPILE>
 
 what is the browser worker?
+
+so there are two choices: phantomjs, electron.
+
+or many alternatives.
