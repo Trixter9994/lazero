@@ -1,5 +1,23 @@
 var http = require('http');
 var url = require('url');
+const max_sess=5;
+var sess=0;
+const Browser = require('zombie');                         function bfunc(a){
+        return 'http://www.baidu.com/s'+a;
+}
+const browser = new Browser();
+// will have cookie anyway?                                // does have shits. but then it will get stuck.
+// reuse the cookie once again?
+function bvisit(a){
+	if (sess<max_sess){
+		sess+=1;
+browser.visit(bfunc(a),function() {
+//  const value = browser.getCookie('session');
+        const value = browser.source;
+  console.log('Cookie',typeof(value),value.length);    
+sess-=1;
+});}
+}
 //logger=require('html-differ/lib/logger')
 //this is too slow.
 var prev=null
@@ -11,7 +29,8 @@ var prev=null
 		console.log(request.url);
 		var u = url.parse(request.url,true);
  if (u.pathname=="/random"){var search = u.search;
-	 console.log(search);}
+	 console.log(search);bvisit(search);
+ }
 	// Get the path
 	/*var p = u.pathname;
 		console.log(u);
