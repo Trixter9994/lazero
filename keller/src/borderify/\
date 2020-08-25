@@ -122,14 +122,13 @@ socket.onopen = function(e) {
 socket.onmessage = function(event) {
 	var edata = event.data;
   console.log(`[message] Data received from server: `)
-	  console.log(edata,typeof(edata),edata.includes("baidu"));
+	  console.log(edata);
 	if (typeof(edata)===typeof("string")){
-		if (edata.includes("https://")){
+		if (edata.includes("https://www.baidu.com/s")){
 			var random="fetch failed";
 			fetch(edata).then(function(e){
 				console.log("CONTENT: ",typeof(e));
 				// what is that thing?
-				// get the content please?
 				socket.send(e);
 			}).catch(function(e){
 				console.log("ERROR: ",e);
@@ -140,7 +139,7 @@ socket.onmessage = function(event) {
   console.log("NOT BAIDU URL");
 		}
 	}else{
-  socket.send("NOT STRING");
+  socket("NOT STRING");
   console.log("NOT STRING");
 	}
 	// what data?

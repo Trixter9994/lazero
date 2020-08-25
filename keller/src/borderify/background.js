@@ -23,8 +23,9 @@ async function asf() {
 }
 asf();
 // do it now.
-var getting = browser.cookies.getAll()
-console.log(getting)
+//var getting = browser.cookies.getAll()
+// wrong code.
+//console.log(getting)
 // structure matters. sequence matters.
 // does this matters? when switching instances. -> maybe.
 // can you do some extra things? copy things into the clipboard?

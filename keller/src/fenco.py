@@ -33,6 +33,7 @@ def echo_socket(ws,path):
     while not ws.closed:
         print("WS: ",path)
         ws.send(str("message test!"))  # 回传给clicent
+        # this is just a heartbeat package. check the content first.
         """ 服务端必须接收到客户端发的消息才能保持该服务运行，如果ws.receive()没有接收到客户端发送的
          消息，那么它会关闭与客户端建立的链接
          底层解释：Read and return a message from the stream. If `None` is returned, then
@@ -44,11 +45,13 @@ def echo_socket(ws,path):
             print("%s receive msg==> " % now, str(json.dumps(message)))
             """ 如果客户端未发送消息给服务端，就调用接收消息方法，则会导致receive()接收消息为空，关闭此次连接 """
 #            ws.send(str(json.dumps(message)))  # 回传给clicent
+# this connection is not async. check async websocket.
             time.sleep(1)
 # wait for a while. shall we?
-            ws.send("https://www.baidu.com")
+            ws.send("https://www.baidu.com/s?wd=how+to+kill+your+father%0A")
             # to disable the protocol, you might need another background script.
             # sending string. check data type.
+            # natural clustering.
         else:
             print(now, "no receive")
  

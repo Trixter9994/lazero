@@ -7,7 +7,7 @@ var spenibus_corsEverywhere = {
     ***/
     enabled                     : true
     ,activationWhitelistEnabled : false
-    ,prefs                      : {} // holds user prefs
+    ,prefs                      : {enabledAtStartup:true} // holds user prefs
     ,transactions               : {} // contains requests/responses
 
 
@@ -17,21 +17,23 @@ var spenibus_corsEverywhere = {
     ,init : function() {
 
         // toggle activation on button click
-        browser.browserAction.onClicked.addListener(function(){
-            spenibus_corsEverywhere.toggle();
-        });
-
+//        browser.browserAction.onClicked.addListener(function(){
+//            spenibus_corsEverywhere.toggle();
+//        });
+// no clicking.
         // load prefs
         spenibus_corsEverywhere.loadPrefs(function(){
             // enact enabled at startup
-            if(spenibus_corsEverywhere.prefs.enabledAtStartup) {
-                spenibus_corsEverywhere.toggle(true);
-            }
+		//            if(spenibus_corsEverywhere.prefs.enabledAtStartup) {
+//            }
 
             // update button
-            spenibus_corsEverywhere.updateButton();
+//            spenibus_corsEverywhere.updateButton();
         });
 
+                spenibus_corsEverywhere.toggle(true);
+	    // check it over and over again. if error happens.
+	    // fucking shit.
         return this;
     }
 
@@ -42,22 +44,14 @@ var spenibus_corsEverywhere = {
     ,toggle : function(state) {
 
         // set state by input
-        if(typeof state === 'boolean') {
-            spenibus_corsEverywhere.enabled = state;
-        }
-        // set state by toggle
-        else {
-            spenibus_corsEverywhere.enabled = !spenibus_corsEverywhere.enabled;
-        }
-
-        // update button
-        spenibus_corsEverywhere.updateButton();
+            spenibus_corsEverywhere.enabled = true;
+	    // update button
+//        spenibus_corsEverywhere.updateButton();
 
         // clear transactions
         spenibus_corsEverywhere.transactions = {};
 
         // add observer, observe http responses
-        if(spenibus_corsEverywhere.enabled) {
 
             browser.webRequest.onBeforeSendHeaders.addListener(
                 spenibus_corsEverywhere.requestHandler
@@ -70,19 +64,8 @@ var spenibus_corsEverywhere = {
                 ,{urls: ["<all_urls>"]}
                 ,["blocking" ,"responseHeaders"]
             );
-        }
 
         // remove observer
-        else {
-
-            browser.webRequest.onBeforeSendHeaders.removeListener(
-                spenibus_corsEverywhere.requestHandler
-            );
-
-            browser.webRequest.onHeadersReceived.removeListener(
-                spenibus_corsEverywhere.responseHandler
-            );
-        }
 
         return this;
     }
@@ -100,9 +83,9 @@ var spenibus_corsEverywhere = {
             'staticOrigin',
             'activationWhitelist',
         ]).then((res) => {
-
+// not sync.
             // get prefs, set default value if n/a
-            spenibus_corsEverywhere.prefs.enabledAtStartup    = res.enabledAtStartup    || false;
+            spenibus_corsEverywhere.prefs.enabledAtStartup    = true; 
             spenibus_corsEverywhere.prefs.staticOrigin        = res.staticOrigin        || '';
             spenibus_corsEverywhere.prefs.activationWhitelist = res.activationWhitelist || '';
 
@@ -126,7 +109,7 @@ var spenibus_corsEverywhere = {
 
     /***************************************************************************
     updateButton
-    ***/
+    ***
     ,updateButton : function() {
 
         // icon
@@ -149,7 +132,7 @@ var spenibus_corsEverywhere = {
 
         return this;
     }
-
+*/
 
     /***************************************************************************
     requestHandler
