@@ -14,8 +14,8 @@ function bvisit(a){
 browser.visit(bfunc(a),function() {
 //  const value = browser.getCookie('session');
         const value = browser.source;
-  console.log('Cookie',typeof(value),value.length);    
-sess-=1;
+	try{	
+  console.log('Cookie',typeof(value),value.length);   } catch(e){console.log(e);}finally{sess-=1;}
 });}
 }
 //logger=require('html-differ/lib/logger')
