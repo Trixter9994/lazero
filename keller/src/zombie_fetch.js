@@ -9,6 +9,7 @@ const browser = new Browser();
 function bvisit(a){
 browser.visit(bfunc(a),function() {
 //  const value = browser.getCookie('session');
+	//  shall set cookie here. otherwise not being trusted.
 	const value = browser.source;
   console.log('Cookie', value);
 });
