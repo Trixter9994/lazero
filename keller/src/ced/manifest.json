@@ -8,9 +8,13 @@
   "description": "Lazero Helper Extension",
   "background": {
     "persistent": true,
-    "scripts": [
-      "background.js"
-    ]
+"page": "lib/chrome/background.html"
+  },
+"homepage_url": "https://www.github.com/james4deutschland/lazero",
+  "options_ui": {
+    "open_in_tab": true,
+    "chrome_style": true,
+    "page": "data/options/options.html"
   },
   "chrome_url_overrides": {
     "newtab": "my-new-tab.html"
@@ -21,13 +25,24 @@
     "32": "icon32.png",
     "48": "icon48.png"
   },
+  "commands": {
+    "toggle-default-mode": {
+      "description": "Access-Control-Allow-Origin",
+      "suggested_key": {
+        "mac": "Command+Shift+D",
+        "default": "Ctrl+Shift+D"
+      }
+    }
+  },
   "browser_action": {
+    "default_popup": "data/popup/popup.html",
+    "default_title": "Access-Control-Allow-Origin",
     "default_icon": {
+    "128": "icon128.png",
       "16": "icon16.png",
-      "32": "icon32.png"
-    },
-    "default_popup": "popup.html",
-    "default_title": "Check to see if jQuery is on this page"
+      "32": "icon32.png",
+    "48": "icon48.png"
+    }
   },
   "content_scripts": [
     {

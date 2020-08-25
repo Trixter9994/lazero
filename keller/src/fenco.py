@@ -48,7 +48,8 @@ def echo_socket(ws,path):
 # this connection is not async. check async websocket.
             time.sleep(1)
 # wait for a while. shall we?
-            ws.send("https://www.baidu.com/s?wd=how+to+kill+your+father%0A")
+# is that keyword specific?
+            ws.send("https://www.baidu.com/s?wd=how+to+kill+your+brother%0A")
             # to disable the protocol, you might need another background script.
             # sending string. check data type.
             # natural clustering.
