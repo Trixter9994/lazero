@@ -1,0 +1,5 @@
+there are patched nightmare\lib\{nightmare.js,runner.js}, to provide cli switches to electron executable via options.cli_args: Nightmare({cli_args:["--no-sandbox"]}).
+
+besides, a patch for node_modules\electron\cli.js can be found under ..\cli_electron_backup.js to automatically disable sandbox.
+
+cause in this way it will recover from slience.
