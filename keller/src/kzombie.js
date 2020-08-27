@@ -1,9 +1,9 @@
 var http = require('http');
 var url = require('url');
-const max_sess=5;
+const max_sess=1;
 var sess=0;
 const Browser = require('zombie');                         function bfunc(a){
-        return 'http://www.baidu.com/s'+a;
+        return 'https://www.baidu.com/s'+a;
 }
 const browser = new Browser();
 // will have cookie anyway?                                // does have shits. but then it will get stuck.
