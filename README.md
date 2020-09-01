@@ -4,7 +4,7 @@
 
 ## SSH/MOSH & RDP/VNC/SPICE are now on schedule, along with the QUARTZ scheduler
 
-While needing multiple shells and cursors to save exploration time, we also need a scheduler to make full use of computational resources.
+While needing multiple shells and cursors to save exploration time, we also need a scheduler to make full use of computational resources. Kinda like TC (Thin Client) anyway.
 
 The cron scheduler is outdated and inaccurate. A qualified scheduler must be at least measured in seconds, not in minutes. Running this on PC as a service is just fine.
 
