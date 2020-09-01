@@ -10,7 +10,7 @@ The cron scheduler is outdated and inaccurate. A qualified scheduler must be at 
 
 Not everything is needed to be executed immediately, cause this world is full of spontaneours/random bursts and they will brick the system.
 
-## Seccomp integrated, and also Windows minimal sandbox
+## Seccomp integrated, and also with some Windows minimal sandboxes
 
 It's not safe online, and it's not good to let this little piece of software running all by itself. May suffer from data loss, virus attack and hacker pranking.
 
