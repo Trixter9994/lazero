@@ -8,7 +8,7 @@ While needing multiple shells and cursors to save exploration time, we also need
 
 The cron scheduler is outdated and inaccurate. A qualified scheduler must be at least measured in seconds, not in minutes. Running this on PC as a service is just fine.
 
-Not everything is needed to be executed immediately, cause this world is full of spontaneours/random bursts and they will brick the system.
+Not everything is needed to be executed immediately, cause this world is full of spontaneous/random bursts and they will brick the system.
 
 ## Seccomp integrated, and also with some Windows minimal sandboxes
 
