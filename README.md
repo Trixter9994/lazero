@@ -2,6 +2,14 @@
 
 # Important updates
 
+## SSH & RDP are now on schedule, along with the QUARTZ scheduler
+
+While needing multiple shells and cursors to save exploration time, we also need a scheduler to make full use of computational resources.
+
+The cron scheduler is outdated and inaccurate. A qualified scheduler must be at least measured in seconds, not in minutes. Running this on PC as a service is just fine.
+
+Not everything is needed to be executed immediately, cause this world is full of spontaneours/random bursts and they will brick the system.
+
 ## Seccomp integrated, and also Windows minimal sandbox
 
 It's not safe online, and it's not good to let this little piece of software running all by itself. May suffer from data loss, virus attack and hacker pranking.
