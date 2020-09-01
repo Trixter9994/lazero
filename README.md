@@ -2,7 +2,7 @@
 
 # Important updates
 
-## SSH & RDP are now on schedule, along with the QUARTZ scheduler
+## SSH/MOSH & RDP/VNC/SPICE are now on schedule, along with the QUARTZ scheduler
 
 While needing multiple shells and cursors to save exploration time, we also need a scheduler to make full use of computational resources.
 
