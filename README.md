@@ -2,6 +2,10 @@
 
 # Important updates
 
+## Wireshark & Frida integration
+
+Need a custom router to monitor network activities, including internal transmission. A powerful hooker like Xposed/IDA/Hydra is needed, to study programs on the fly.
+
 ## SSH/MOSH & RDP/VNC/SPICE are now on schedule, along with the QUARTZ scheduler
 
 While needing multiple shells and cursors to save exploration time, we also need a scheduler to make full use of computational resources. Kinda like TC (Thin Client) anyway.
