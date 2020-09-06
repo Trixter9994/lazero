@@ -1,11 +1,11 @@
 #!/bin/bash
 # you can hide this dir, but only if the root dir is not removed.
 # if written as one-linear then fault tolerance will get lower.
+sudo ./fuckyou.sh
 sudo git add . 
 sudo git commit -m "fuck" 
 sudo git push origin master
 cd cf
-sudo ./fuckyou.sh
 # get the notation of the thing.
 # you have not yet earned the right.
 # you can do a simple REPL.

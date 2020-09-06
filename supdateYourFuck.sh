@@ -1,7 +1,7 @@
 #!/bin/bash
+sudo ./updateYourFuck.sh
 sudo git pull origin master
 cd cf
-sudo ./updateYourFuck.sh
 # HEY! you want separate cursors and keyboards.
 # GUESS WHAT?
 # WAYLAND HAS IT!
