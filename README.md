@@ -1,5 +1,9 @@
 ![lazero-background](/lazero_background.png)
 
+[![fuck counter](https://img.shields.io/github/search/James4Deutschland/lazero/fuck.svg)](https://github.com/James4Deutschland/lazero/search?q=fuck)
+
+[![shit counter](https://img.shields.io/github/search/James4Deutschland/lazero/shit.svg)](https://github.com/James4Deutschland/lazero/search?q=shit)
+
 # Important updates
 
 ## Wireshark & Frida integration
